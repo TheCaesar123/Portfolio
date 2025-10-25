@@ -109,20 +109,22 @@
   <!-- Contact -->
   <section id="contact" class="wrap">
     <h2>Contact</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Name" required />
-      <input type="email" placeholder="Email" required />
-      <textarea rows="5" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+      <form id="contact-form" class="contact-form">
+        <input type="text" name="from_name" placeholder="Your Name" required>
+        <input type="email" name="from_email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="wrap footer">
-      © 2025 Your Name — All rights reserved
+      © 2025 Veljko Aleksić — All rights reserved
     </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 </body>
 </html>

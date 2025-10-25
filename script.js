@@ -47,3 +47,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// Inicijalizacija EmailJS
+emailjs.init("knloPVzg1BNyVtCk0"); // <-- zameni sa tvojim Public Key
+
+// Slanje forme
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_aqgr06e", "template_lgwlgnk", this)
+      .then(() => {
+        alert("✅ Message sent successfully!");
+        this.reset(); // reset forme
+      }, (err) => {
+        alert("❌ Error sending message. Check console.");
+        console.error("EmailJS error:", err);
+      });
+  });
+}
+
+
