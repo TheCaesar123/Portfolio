@@ -210,9 +210,17 @@ a {
   padding: 1rem;
   transition: transform 0.3s ease;
 }
+.card h4 a {
+  color: white;           /* osnovna boja linka */
+  text-decoration: none;    /* uklanja podvlačenje */
+  cursor: pointer;          /* pokazuje da je klikljivo */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
 
-.card:hover {
-  transform: translateY(-4px);
+.card h4 a:hover {
+  color: #009fd4;           /* promena boje na hover */
+  transform: translateY(-2px); /* mala animacija podizanja */
+  text-decoration: underline;   /* opcionalno da link dodatno iskače */
 }
 
 .thumb img {
