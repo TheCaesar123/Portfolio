@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (contactForm) {
     contactForm.addEventListener("submit", e => {
       e.preventDefault();
-      alert("Hvala! Tvoja poruka je uspešno poslata.");
+      alert("Thanks, your message was sent successfully!.");
       contactForm.reset();
     });
   }
