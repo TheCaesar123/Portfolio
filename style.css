@@ -132,12 +132,29 @@ nav a.cta {
 
 .avatar {
   background: rgba(255, 255, 255, 0.02);
-  border-radius: var(--radius);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--muted);
   height: 250px;
+  width: 250px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.15);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 -90px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Efekat na hover (opciono) */
+.avatar:hover img {
+  transform: scale(1.03);
 }
 
 /* --- ABOUT --- */
@@ -215,6 +232,34 @@ a {
   padding: 1rem;
   transition: transform 0.3s ease;
 }
+/* Sprečava da <a> ima defaultni stil */
+.card-link {
+  text-decoration: none;
+  color: inherit; /* nasleđuje boju teksta unutar kartice */
+  display: block;
+}
+
+/* Stil kartice */
+.card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efekat hovera na celu karticu */
+.card-link:hover .card {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 191, 255, 0.3);
+}
+
+/* Hover efekat na naslov unutar kliknute kartice */
+.card-link:hover h4 {
+  color: #00bfff;
+  transition: color 0.3s ease;
+}
+
 .card h4 a {
   color: white;           /* osnovna boja linka */
   text-decoration: none;    /* uklanja podvlačenje */
@@ -235,13 +280,6 @@ a {
   border-radius: 10px;
 }
 
-.avatar img {
-  width: 100%;
-  height: 120%;
-  object-fit: cover;
-  object-position: 0 -100px;
-  border-radius: 10px;
-}
 
 
 .thumb {
@@ -324,6 +362,23 @@ footer {
   }
 
   .avatar {
-    height: 200px;
+    height: 180px;
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .avatar img {
+    object-position: 0 -65px; /* centriraj sliku */
+    transform: scale(1.05); /* malo uvećaj */
+  }
+}
+@media (max-width: 480px) {
+  .avatar {
+    height: 150px;
+    width: 150px;
+  }
+
+  .avatar img {
+    object-position: 0 -55px; /* vidi sredinu slike */
   }
 }
